@@ -185,3 +185,18 @@ i {
     margin: 0;
   }
 }
+
+@media (max-width: 600px) {
+  #projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .project-tile {
+    width: 300px;
+  }
+
+  .project-tile img {
+    height: 150px;
+  }
+}
