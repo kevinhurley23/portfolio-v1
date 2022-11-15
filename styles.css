@@ -115,7 +115,7 @@ nav a:hover {
 
 #projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
   gap: 2rem;
   width: 90%;
   max-width: 1600px;
@@ -176,13 +176,10 @@ i {
   margin-left: 7px;
 }
 
-@media (max-width: 1100px) {
-  nav {
-    justify-content: center;
-  }
-
-  nav ul {
-    margin: 0;
+@media (max-width: 1150px) {
+  #projects-grid {
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr);
   }
 }
 
@@ -198,5 +195,13 @@ i {
 
   .project-tile img {
     height: 150px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    margin: 0;
   }
 }
