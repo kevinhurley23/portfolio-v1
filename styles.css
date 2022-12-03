@@ -1,8 +1,8 @@
 :root {
-  --background1: rgb(66, 63, 63);
-  --background2: rgb(93, 102, 138);
-  --text1: rgb(254, 254, 254);
-  --text2: rgb(182, 59, 59);
+  --background1: rgb(33, 32, 32);
+  --background2: rgb(56, 87, 108);
+  --text1: rgb(241, 238, 227);
+  --text2: rgb(132, 38, 38);
 }
 
 * {
@@ -13,6 +13,8 @@
 html {
   box-sizing: border-box;
 }
+
+/* Home Page */
 
 body {
   font-family: trebuchet ms;
@@ -28,9 +30,13 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--text1);
+}
+
+.underline {
   text-align: center;
+  border-bottom: 3px solid white;
 }
 
 h3 {
@@ -106,16 +112,17 @@ nav a:hover {
 }
 
 #projects h2 {
-  width: 350px;
+  font-size: 2.5rem;
+  width: 400px;
   height: 50px;
   margin: 0 auto;
   padding: 4rem 0 1rem 0;
-  border-bottom: 3px solid white;
+  text-align: center;
 }
 
 #projects-grid {
   display: grid;
-  grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
   width: 90%;
   max-width: 1600px;
@@ -148,6 +155,10 @@ nav a:hover {
   margin-top: -5px;
 }
 
+#show-all-projects:hover {
+  text-decoration: underline;
+}
+
 #contact {
   min-height: 400px;
   display: flex;
@@ -158,7 +169,6 @@ nav a:hover {
 #contact h2 {
   margin: 3rem 0 3rem;
   padding: 2rem 1.2rem;
-  border-bottom: 3px solid white;
 }
 
 #freecodecamp-logo {
@@ -203,5 +213,119 @@ i {
 
   nav ul {
     margin: 0;
+  }
+}
+
+/* Projects Page */
+
+#full-projects {
+  background-color: var(--background2);
+  min-height: 100vh;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 50px 70px 50px;
+}
+
+#full-projects-title {
+  height: 50px;
+  margin: 0 auto 20px;
+  padding: 2rem;
+  text-align: center;
+  font-size: 60px;
+}
+
+.project-container {
+  width: 95%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.project-text-container {
+  min-height: 200px;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.project-text-container h2:hover {
+  text-decoration: underline;
+}
+
+.project-text-container p {
+  color: var(--text1);
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.project-thumb {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 1rem;
+}
+
+.project-thumb:hover {
+  box-shadow: 0 0 10px black;
+}
+
+hr {
+  width: 92%;
+  background-color: var(--text1);
+  height: 2px;
+}
+
+/* Resume */
+
+#resume {
+  background-color: var(--background2);
+  max-width: 1700px;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+#resume h1 {
+  margin-top: 5rem;
+}
+
+#resume-inner {
+  display: grid;
+  grid-template-columns: 400px;
+  grid-auto-columns: auto-fit;
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+
+#resume-pic {
+  height: 500px;
+  max-width: 400px;
+  grid-row: span 2;
+}
+
+.resume-heading {
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.resume-text p,
+.resume-text li {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.resume-text ul {
+  padding-left: 1.4rem;
+}
+
+@media (max-width: 1200px) {
+  #resume-inner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  #resume-pic {
+    margin-bottom: 2rem;
+    align-self: center;
   }
 }
