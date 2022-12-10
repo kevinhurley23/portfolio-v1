@@ -1,7 +1,7 @@
 :root {
   --background1: rgb(33, 32, 32);
   --background2: rgb(56, 87, 108);
-  --text1: rgb(241, 238, 227);
+  --text1: #ffffff;
   --text2: rgb(132, 38, 38);
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: var(--text1);
   margin: 2rem auto;
@@ -52,6 +52,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  height: 70px;
   z-index: 4;
 }
 
@@ -149,7 +150,7 @@ nav a:hover {
 
 .project-tile p {
   background-color: rgb(65, 70, 85);
-  font-size: 20px;
+  font-size: 1.4rem;
   text-align: center;
   padding: 1.8rem;
   margin-top: -5px;
@@ -178,7 +179,7 @@ nav a:hover {
 .contact-btn {
   display: flex;
   margin: 0.6rem;
-  font-size: 24px;
+  font-size: 1.5rem;
   letter-spacing: 2px;
 }
 
@@ -220,20 +221,13 @@ i {
 
 #full-projects {
   background-color: var(--background2);
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 50px 70px 50px;
-}
-
-#full-projects-title {
-  height: 50px;
-  margin: 0 auto 20px;
-  padding: 2rem;
-  text-align: center;
-  font-size: 60px;
+  margin: 0;
+  padding-bottom: 2rem;
 }
 
 .project-container {
@@ -254,7 +248,7 @@ i {
 
 .project-text-container p {
   color: var(--text1);
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-top: 10px;
 }
 
@@ -276,8 +270,8 @@ hr {
 }
 
 @media (max-width: 800px) {
-  #full-projects-title {
-    font-size: 40px;
+  h1 {
+    font-size: 3rem;
   }
 
   .project-container {
@@ -285,17 +279,16 @@ hr {
   }
 }
 
+@media (max-width: 400px) {
+}
+
 /* Resume */
 
 #resume {
   background-color: var(--background2);
-  max-width: 1700px;
-  min-height: 100vh;
+  max-width: min(1600px, 100vw);
+  min-height: calc(100vh - 70px);
   padding: 0 2rem;
-}
-
-#resume h1 {
-  margin-top: 5rem;
 }
 
 #resume-inner {
@@ -307,19 +300,19 @@ hr {
 }
 
 #resume-pic {
-  height: 500px;
+  max-height: 500px;
   max-width: 400px;
   grid-row: span 2;
 }
 
 .resume-heading {
   margin-bottom: 10px;
-  font-size: 40px;
+  font-size: 3rem;
 }
 
 .resume-text p,
 .resume-text li {
-  font-size: 20px;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
@@ -336,6 +329,25 @@ hr {
 
   #resume-pic {
     margin-bottom: 2rem;
+    height: 100vw;
     align-self: center;
+  }
+}
+
+@media (max-width: 400px) {
+  #resume {
+    padding: 0.5rem;
+  }
+
+  .resume-heading,
+  .project-heading {
+    font-size: 2rem;
+  }
+
+  .resume-text p,
+  .resume-text li,
+  .project-text-container p {
+    font-size: 1rem;
+    line-height: 1.3;
   }
 }
