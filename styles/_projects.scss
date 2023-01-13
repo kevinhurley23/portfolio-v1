@@ -1,0 +1,60 @@
+@use "./variables" as v;
+@use "./mixins" as *;
+
+#full-projects {
+  background-color: v.$background2;
+  min-height: calc(100vh - 70px);
+  max-width: 1000px;
+  @include flexCenter;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.project-container {
+  width: 95%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.project-text-container {
+  min-height: 200px;
+  margin: 1rem 1rem 1rem 0;
+
+  h2:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    color: v.$text1;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
+
+.project-thumb {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 1rem;
+
+  &:hover {
+    box-shadow: 0 0 10px black;
+  }
+}
+
+hr {
+  width: 92%;
+  background-color: v.$text1;
+  height: 2px;
+}
+
+@media (max-width: 800px) {
+  // h1 {
+  //   font-size: 3rem;
+  // }
+
+  .project-container {
+    flex-direction: column;
+  }
+}

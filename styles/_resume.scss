@@ -1,0 +1,71 @@
+@use "./variables" as v;
+
+#resume {
+  background-color: v.$background2;
+  max-width: min(1600px, 100vw);
+  min-height: calc(100vh - 70px);
+  padding: 0 2rem;
+}
+
+#resume-inner {
+  display: grid;
+  grid-template-columns: 400px;
+  grid-auto-columns: auto-fit;
+  grid-auto-flow: column;
+  gap: 2rem;
+
+  img {
+    max-height: 500px;
+    max-width: 400px;
+    grid-row: span 2;
+  }
+}
+
+.resume-heading {
+  margin-bottom: 10px;
+  // font-size: 3rem;
+}
+
+.resume-text {
+  p,
+  li {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  ul {
+    padding-left: 1.4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #resume-inner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    img {
+      margin-bottom: 2rem;
+      height: 100vw;
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #resume {
+    padding: 0.5rem;
+  }
+
+  // .resume-heading,
+  // .project-heading {
+  //   font-size: 1.8rem;
+  // }
+
+  .resume-text p,
+  .resume-text li,
+  .project-text-container p {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}

@@ -1,0 +1,160 @@
+@use "./variables" as v;
+@use "./mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: trebuchet ms;
+  background-color: v.$background1;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: v.$text1;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: v.$text1;
+}
+
+h3 {
+  font-size: 3rem;
+  color: v.$text2;
+}
+
+.underline {
+  text-align: center;
+  border-bottom: 3px solid v.$text1;
+}
+
+#welcome-section {
+  height: 100vh;
+}
+
+#code-img {
+  position: absolute;
+  z-index: 0;
+  top: 48px;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+#overlay {
+  position: absolute;
+  z-index: 1;
+  top: 48px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(22, 23, 23, 0.839);
+  @include flexCenter;
+}
+
+#projects {
+  background-color: v.$background2;
+  min-height: 800px;
+  padding: 3rem 0;
+
+  h2 {
+    max-width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 4rem 0 1rem 0;
+    text-align: center;
+  }
+}
+
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1600px;
+  margin: 3rem auto;
+}
+
+.project-tile {
+  width: 500px;
+  transition: 0.4s;
+  justify-self: center;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0 0 20px 3px rgb(65, 70, 85);
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  p {
+    background-color: rgb(65, 70, 85);
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1.8rem;
+    margin-top: -5px;
+  }
+}
+
+#show-all-projects:hover {
+  text-decoration: underline;
+}
+
+#contact {
+  min-height: 400px;
+  @include flexCenter;
+
+  h2 {
+    margin-bottom: 3rem;
+    padding: 2rem 1.2rem;
+  }
+}
+
+#freecodecamp-logo {
+  width: 200px;
+}
+
+.contact-btn {
+  display: flex;
+  margin: 0.6rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+i {
+  margin-left: 7px;
+}
+
+@media (max-width: 600px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  #projects-grid {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+
+  .project-tile {
+    width: 300px;
+
+    img {
+      height: 150px;
+    }
+  }
+}
